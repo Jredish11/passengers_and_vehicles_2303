@@ -31,7 +31,31 @@ RSpec.describe Vehicle do
       expect(vehicle.passengers).to eq([])
     end
 
+    it "adds passengers to list" do
+      vehicle = Vehicle.new("2001", "Honda", "Civic")  
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+      jude = Passenger.new({"name" => "Jude", "age" => 20}) 
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})
 
+      vehicle.add_passenger(charlie)
+      vehicle.add_passenger(jude)
+      vehicle.add_passenger(taylor)
+
+      expect(vehicle.passengers).to eq([charlie, jude, taylor])
+    end
+
+    it "counts the number of adult passengers" do
+      vehicle = Vehicle.new("2001", "Honda", "Civic")  
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+      jude = Passenger.new({"name" => "Jude", "age" => 20}) 
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+
+      vehicle.add_passenger(charlie)
+      vehicle.add_passenger(jude)
+      vehicle.add_passenger(taylor)
+
+      expect(vehicle.num_adults).to eq(2)
+    end
   end
 end
 
@@ -39,26 +63,3 @@ end
 
 
 
-# pry(main)> vehicle.passengers
-# # => []
-
-# pry(main)> charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
-# # => #<Passenger:0x00007fe0da1ec450...>
-
-# pry(main)> jude = Passenger.new({"name" => "Jude", "age" => 20})    
-# # => #<Passenger:0x00007fe0da2730e0...>
-
-# pry(main)> taylor = Passenger.new({"name" => "Taylor", "age" => 12})    
-# # => #<Passenger:0x00007fe0da2cf1b0...>
-
-# pry(main)> vehicle.add_passenger(charlie)    
-
-# pry(main)> vehicle.add_passenger(jude)    
-
-# pry(main)> vehicle.add_passenger(taylor)    
-
-# pry(main)> vehicle.passengers
-# # => [#<Passenger:0x00007fe0da1ec450...>, #<Passenger:0x00007fe0da2730e0...>, #<Passenger:0x00007fe0da2cf1b0...>]
-
-# pry(main)> vehicle.num_adults
-# # => 2
