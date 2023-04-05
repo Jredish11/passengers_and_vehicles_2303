@@ -21,6 +21,8 @@ RSpec.describe Vehicle do
       vehicle = Vehicle.new("2001", "Honda", "Civic")  
 
       expect(vehicle.speeding?).to eq(false)
+      vehicle.speed
+      expect(vehicle.speeding?).to eq(true)
     end
 
 
@@ -30,13 +32,6 @@ end
 
 
 
-# pry(main)> vehicle.speeding?
-# # => false
-
-# pry(main)> vehicle.speed
-
-# pry(main)> vehicle.speeding?
-# # => true
 
 # pry(main)> vehicle.passengers
 # # => []
