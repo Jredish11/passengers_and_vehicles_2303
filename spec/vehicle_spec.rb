@@ -25,6 +25,12 @@ RSpec.describe Vehicle do
       expect(vehicle.speeding?).to eq(true)
     end
 
+    it "has an empty list of passengers" do
+      vehicle = Vehicle.new("2001", "Honda", "Civic")  
+
+      expect(vehicle.passengers).to eq([])
+    end
+
 
   end
 end
