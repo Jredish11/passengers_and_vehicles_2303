@@ -24,4 +24,8 @@ class Park
   def all_attendees
     @passengers.map { |passenger| passenger.name }.sort
   end
+
+  def minors
+    @passengers.select { |passenger| passenger.adult? == false }.map { |passenger| passenger.name }.sort
+  end
 end
