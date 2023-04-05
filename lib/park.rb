@@ -20,4 +20,8 @@ class Park
     adult_count = passengers.select { |passenger| passenger.adult? ==  true }.count
     adult_count * @price
   end
+
+  def all_attendees
+    @passengers.map { |passenger| passenger.name }.sort
+  end
 end
