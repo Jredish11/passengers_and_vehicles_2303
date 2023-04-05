@@ -136,9 +136,3 @@ end
 
 
 
-
-# The National Park Service has given you additional functionality it would like you to implement. They would like to be able to track patrons of their parks.
-
-
-
-# Generate a list of all adults names, sorted alphabetically.
