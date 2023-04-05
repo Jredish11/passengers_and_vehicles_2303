@@ -21,6 +21,11 @@ class Vehicle
     @sped = true
   end
 
+  def add_passenger(passenger)
+    @passengers << passenger
+  end
 
-
+  def num_adults
+    @passengers.select { |passenger| passenger.adult? }.count
+  end
 end
