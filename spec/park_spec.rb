@@ -106,7 +106,7 @@ RSpec.describe Park do
       expect(congress_park.all_attendees).to eq(["Charlie", "Honor", "Jim", "Kara", "Taylor"])
     end
 
-    it "Generates a list of all minors names, sorted alphabetically" do
+    it "Generates a list of all minors names & a list of all adults names,sorted alphabetically" do
       congress_park = Park.new("Congress Park", 10)
       vehicle1 = Vehicle.new("2001", "Honda", "Civic")
       vehicle2 = Vehicle.new("2010", "Ford", "Taurus")
@@ -129,6 +129,7 @@ RSpec.describe Park do
       congress_park.add_vehicle(vehicle4)
 
       expect(congress_park.minors).to eq(["Honor", "Taylor"])
+      expect(congress_park.adults).to eq(["Charlie", "Jim", "Kara"])
     end
   end
 end
@@ -139,5 +140,5 @@ end
 # The National Park Service has given you additional functionality it would like you to implement. They would like to be able to track patrons of their parks.
 
 
-# Generate a list of all minors names, sorted alphabetically.
+
 # Generate a list of all adults names, sorted alphabetically.
