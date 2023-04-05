@@ -66,8 +66,6 @@ RSpec.describe Park do
       jim = Passenger.new({"name" => "Jim", "age" => 30})
       honor = Passenger.new({"name" => "Honor", "age" => 17})
 
-
-
       vehicle1.add_passenger(charlie)
       vehicle2.add_passenger(taylor)
       vehicle3.add_passenger(kara)
@@ -80,7 +78,9 @@ RSpec.describe Park do
 
       expect(congress_park.revenue).to eq(30)
     end
+  end
 
+  describe "Iteration 4" do
     it "Generates a list of all all_attendees names, sorted alphabetically" do
       congress_park = Park.new("Congress Park", 10)
       vehicle1 = Vehicle.new("2001", "Honda", "Civic")
@@ -113,6 +113,6 @@ end
 
 # The National Park Service has given you additional functionality it would like you to implement. They would like to be able to track patrons of their parks.
 
-# Generate a list of all all_attendees names, sorted alphabetically.
+
 # Generate a list of all minors names, sorted alphabetically.
 # Generate a list of all adults names, sorted alphabetically.
