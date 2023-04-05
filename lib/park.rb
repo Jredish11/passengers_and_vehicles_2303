@@ -16,5 +16,8 @@ class Park
     @passengers += vehicle.passengers
   end
 
-  
+  def revenue
+    adult_count = passengers.select { |passenger| passenger.adult? ==  true }.count
+    adult_count * @price
+  end
 end
